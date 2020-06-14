@@ -1,0 +1,12 @@
+services:
+    tbackoff.warnbangroups.listener:
+        class: tbackoff\warnbangroups\event\main_listener
+        arguments:
+            - '@auth'
+            - '@dbal.conn'
+            - '@language'
+            - '@request'
+            - '@template'
+            - '@user'
+        tags:
+            - { name: event.listener }
